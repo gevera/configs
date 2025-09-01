@@ -1,0 +1,19 @@
+XXkb.mainwindow.enable: yes
+XXkb.mainwindow.appicon: yes
+XXkb.mainwindow.type: tray
+XXkb.mainwindow.in_tray: yes
+XXkb.mainwindow.geometry: 18x18+0+0
+XXkb.mainwindow.label.enable: yes
+XXkb.mainwindow.label.text.1: US
+XXkb.mainwindow.label.text.2: RU
+XXkb.mainwindow.label.background: #000000
+XXkb.mainwindow.label.foreground: white
+XXkb.mainwindow.label.font: -misc-*-r-*-72-*
+
+XXkb.controls.two_state: no
+XXkb.group.base: 1
+XXkb.group.alt: 2
+
+XXkb.button.enable: no
+
+XXkb.bell.enable: no
