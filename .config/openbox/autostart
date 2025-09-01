@@ -1,0 +1,51 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# If you want to use GNOME config tools...
+#
+#if test -x /usr/libexec/gnome-settings-daemon >/dev/null; then
+#  /usr/libexec/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null; then
+#  gnome-settings-daemon &
+#fi
+
+# If you want to use XFCE config tools...
+#
+#xfce-mcs-manager &
+#
+# Compositor
+picom -b &
+# Monitor eye protection
+redshift &
+# ROFI
+rofi -show drun -dpi 192 &
+# Gestures
+touchegg &
+# Network Manager
+nm-applet &
+# Audio applet 
+# pasystray &
+# Language Switcher
+setxkbmap -layout us,ru -option grp:alt_shift_toggle &
+# Enable Tapping on touchpads
+xinput set-prop 11 323 1 &
+# toolbar
+tint2 -c ~/.config/tint2/launchy/launchy.tint2rc &
+# Clipboard
+copyq &
+# Enable Polybar
+# ~/.config/polybar/launch.sh --docky &
+# polybar &
+# Background
+feh --bg-fill ~/Pictures/Wallpapers/pers.jpg &
+# Dock
+plank &
+# Todo list 
+flatpak run de.manuel_kehl.go-for-it &
+# Yandex Disk Inidicator
+yandex-disk-indicator &
+# Language applet
+xxkb &
