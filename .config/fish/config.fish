@@ -4,18 +4,20 @@ end
 
 jump shell fish | source
 
-alias zed="flatpak run dev.zed.Zed"
+alias cr="cursor"
 alias ga="git add ."
 alias gs="git status"
 alias nd="npm run dev"
 alias ni="npm install"
 alias bd="bun --bun run dev"
 alias bi="bun install"
+alias sws="static-web-server"
 alias pbs="./pocketbase serve"
-alias cursor="~/Applications/Cursor_0ec6c12a061af79a840403cc4b4ab235.AppImage"
+# alias cursor="~/Applications/Cursor_0ec6c12a061af79a840403cc4b4ab235.AppImage"
 alias c="clear"
 alias telegram="flatpak run org.telegram.desktop"
 alias simplenote="flatpak run com.simplenote.Simplenote"
+alias cointop="flatpak run com.github.miguelmota.Cointop"
 
 set -Ux XDG_DATA_DIRS $XDG_DATA_DIRS /var/lib/flatpak/exports/share ~/.local/share/flatpak/exports/share
 
@@ -69,3 +71,13 @@ fish_add_path $HOME/.local/bin
 function config
     git --git-dir=$HOME/.cfg/ --work-tree=$HOME $argv
 end
+
+starship init fish | source
+
+set -gx EDITOR /usr/bin/cursor
+# pnpm
+set -gx PNPM_HOME "/home/gevera/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
