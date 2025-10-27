@@ -1,0 +1,650 @@
+In less
+
+/
+and type the word to find in document and enter
+
+grep "sone word" /path/to/file.txt
+grep -c "word" /path/to/file.txt // counts the occurance of words in the file
+grep -i "word" /path/to/file.txt //ignores case sensitivity will find the occurances of the word in that file
+
+gpg --gen-key
+
+find /path/to/search -name "name.ext"
+find . -name "*.pdf"
+find /path/dir -size +10M
+
+exec fish -> refresh fish with new config
+which fish -> where fish located
+starship -> prompt for fish
+
+# DotFiles
+config status
+config add .
+config push origin main
+
+
+sudo service --status-all  ->  show all services
+
+curl --head http://localhost:3001 -> check if site is running
+
+
+cat package.json | jq
+
+ncdu -> check for folder size
+duf -> check disk sizes
+
+du -h . // Total size
+
+find . -type f | wc -l  // how many files in the directory and subdirs
+
+cloc . // how many lines of code
+cloc --exclude-dir=node_modules,build .
+tokei --> count locs respecting gitignore
+scc --> counts locs
+
+cointop -> 
+
+Get list of files with locs more then 500
+find /home/gevera/Projects/Clients/ahmad/nmo_frontend/src -name "*.svelte" -type f -exec wc -l {} + | awk '$1 > 500 {print $1, $2}' | sort -rn
+
+figlet -c denis -> 
+     _            _     
+  __| | ___ _ __ (_)___ 
+ / _` |/ _ \ '_ \| / __|
+| (_| |  __/ | | | \__ \
+ \__,_|\___|_| |_|_|___/
+
+
+pwgen -1cnsy 16 >> Generate password 16 length
+echo "SECRET_KEY_BASE=$(openssl rand -base64 48)" >> .env
+openssl rand -base64 64 | tr -d '\n'
+openssl rand -hex 16
+
+npx nanoid >> generate nano id
+npx nanoid --size 12
+
+yt-dlp -x "youtube.com link"
+https://www.youtube.com/watch?v=atrABN_rYKE
+
+for i in (seq 1 25)
+   npx nanoid
+end
+
+uuid >> generate uuid
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+
+geoip
+geoiplookup 195.133.196.181 -> detects country 
+curl ipinfo.io/195.133.196.181
+curl http://ip-api.com
+
+periodic-table-cli
+
+astroterm -> astronomy
+astroterm --color --constellations --speed 10000 --fps 64 --city Singapore
+astral \\ For astronomical data calendar
+
+find . -name 'package.json' -print0 | xargs -0 grep '"dbmate"'   >> find all projects that use dbmate
+
+uniclip > sharable clipboard between devices
+xclip -selcetion c < .env     >> copy to clipbloard contents of .env file
+npm audit --json | xclip -selection c
+code --list-extensions | xclip -sel clip                >> copy the output of the command to clipboard
+
+
+fwupdmgr update -> updates firmware/bios
+
+inxi -Fzx >> Info about computer
+
+du /path/dir -sh   //directory summary
+
+du .. -h //summary of previous direcotry
+
+du -sh
+
+bass source .env.dev && iex -S mix phx.server
+
+j down -> autojump
+abbr -a ga git add . -> adds abbreviation
+
+tree . --du -h  // Tree view of current directory
+
+df -hT // Free space on partitions
+
+sc -> spreadsheet
+
+watch acpi >> battery usage
+
+tuigreet -> gdm for cli
+lemurs -> gdm for cli
+
+ln -s /home/user/need/absolute/path/file.txt shortcut_name
+
+echo "some text" > file.txt //creates a file.txt with contentn. If file.txt existed will eray it over
+echo "some other text" >> file.txt > will add to the end of the file the content of echo
+echo <password> | sudo -S <command>  >> pass password to sudo
+echo "alias gpom='git push origin master'" >> ~/.bash_aliases
+
+
+find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;
+
+dict searchterm  -> will show definition of the words
+dict -d trans port -> will translate the word "port"
+trans ru:en "Маршрут"
+trans ru:es "Маршрут"
+trans ru:zh "Маршрут"
+trans ru:ja "Маршрут"
+
+
+micro -> editor
+helix -> editor
+
+bmon \\ monitoring netowrking
+nmtui >> network connection
+
+brightnessctl --device=chromeos::kbd_backlight set 100   // backlit keyboard
+
+Email Clients:
+- himalaya
+- mutt
+- neomutt
+
+gopass -> password manager 
+
+epy > TODO FIX IT! Read ebooks in terminal pdf
+zathura > Document viewer
+cava > audio vizualizer
+
+aria2c https://somestite.com/some.iso -> downloads files
+wget -o 
+
+cp -RT Pictures Pictures_backup   -> copy only the files and subdirectories but not the source directory, use the -T option:
+
+lazygit > TUI for git
+lazydocker > TUI for docker
+oha -> load generator
+
+git ->
+  onefetch -> git repo info
+  git reset --hard -> goes back to the last commit for changed files
+  git clean -f -d  ->  cleans files and directories that were added
+  get branch -a
+  git checkout -b new_branch_name
+  
+  git checkout your_working_branch
+  git checkout main
+  git fetch origin main
+  git merge origin/main
+  git fetch --all
+  git diff-tree -p <COMMIT> 
+  git rebase --signoff HEAD~2   // sign last two commits
+  
+  git commit --amend --no-edit -S <commit hash> // sign specific commit
+  git commit --allow-empty -m "Trigger Build"
+  git tag v0.0.1
+  git push --tags
+
+  
+  git reset --soft HEAD^  -> reverts last local commit
+  git reset HEAD --hard
+  
+  npx degit https://github.com/oven-sh/bun.git/packages/bun-plugin-svelte/example my-example-folder
+  
+  git remote show origin
+  
+  git config --global alisa.staash 'stash --all'
+  git log -L 15,25:path/to/file
+  git log -L FunctionName:path/to/file
+  git config --global rerere.enabled true
+  git congig --global column.ui auto
+  git commit --amend -m "my final changes"
+  git push --force-with-lease
+  git log --graph
+  git rev-parse --abbrev-ref HEAD    -> name of current branch
+  git branch --show-current -> name of current branch
+  git branch --show-current | xclip -selection c -> copy current branch
+  git remote add github https://github.com/Company_Name/repository_name.git
+  git remote -v
+  
+
+
+  git add .        >> stage files
+  git diff --cached       >> see all the diffs in stage before commit
+  
+  const resp = await fetch_api(
+		`${env.STRAPI_API_ENDPOINT}/api/news-posts?sort=date:desc${search_term ? '&filters[$or][0][title][$containsi]=' + search_term : ''}${search_term ? '&filters[$or][1][content][$containsi]=' + search_term : ''}&pagination[page]=1&pagination[pageSize]=54${tag != ('0' || null) ? '&filters[tag][id][$eq]=' + tag : ''}&populate=deep&locale=${localeMapper(languageTag())}`
+	);
+  
+in vim :Goyo -> distraction free editing
+  
+  
+time npm run dev -> execute a command and check  how much time it took
+
+zip -r myfiles.zip mydir
+
+
+distrobox-list
+distrobox create -i ghcr.io/void-linux/void-glibc-full:latest --name void-linux
+distrobox enter void-linux
+
+
+nmcli radio wifi on
+nmcli dev wifi list
+sudo nmcli dev wifi connect MyNetworkName password "some_password"
+
+seq 1 24
+
+browsh
+elinks
+w3m
+
+
+tldr --> better man pages
+
+ebook-convert name_of_book.epub name_of_book.azw3
+convert -append Russian_Loc_passport_propiska-* Russian_Loc_passport_propiska_img.jpeg 
+
+zellij -> Rival to tmux
+
+tmux ->
+   cb = prefix ( ctrl + space | ctrl +b )
+
+   cb + %    -> equal vertical
+   cb + z    -> zoom(foolscreen)
+   cb + !    -> create a window out of pane 
+   cb + x    -> close panezod 4 llm
+   cb + q    -> close window
+   cb + s   == tmux ls -> show all sessions
+   cb + 3   -> move to a window number 3
+   cb + w   -> preview all windows  (alt + tab)
+   cb + I   -> install plugin
+   cb + alt + u  -> uninstall plugin
+   cb + U   -> Updates plugins
+   cb + $   -> rename session
+   cb + ,   -> rename window
+   cb + [  -> Move cursor at the begging of copy selection then 'Crtrl+Space' to start selection and then y or Enter to copy to clipbloard
+   >>> Tmux resurecet plugin 
+   cb + Ctrl-s - save
+   cb + Ctrl-r - restore
+
+
+Music in terminal
+cmus
+moc
+ncmpc
+mp3blaster
+
+countryfetch
+
+
+ranger
+mc
+vifm
+nnn
+
+abbr -a ga git add .   -> Abbreviation for commands
+
+gotop -> monitoring
+
+mv file.txt file2.txt -> rename file.txt to file2.txt
+
+cd -    -> go to previous directory
+
+fzf ->
+  cd to the folder and execute fzf for fuzzy search
+
+vim -o `fzf` -> in bash 
+vim -o (fzf) -> in fish
+
+sqlite3 source.db ".dump cities" | sqlite3 destination.db
+
+pgcli ->   sudo -u postgres pgcli
+rainfrog -> sql tui
+lazysql -> sql tui
+dblab -> SQL TUI
+
+curl ->   requests
+posting.sh -> requests
+
+static-web-server -d dist/ -p 3333  -> server static folder dist/ on port 3333
+bun create farm@latest  -> use farm instead of vite
+
+taskwarrior -> task -l | task add name of the task due:2022-10-30
+
+pyradio -> listen to radio
+
+howdoi -> stack overflow
+
+calcurse -> calendar and tasks
+
+npm run development | seashells -> share termial on the web
+
+tmate -> share terminal
+upterm -> share terminal
+
+posting -> API Client
+
+
+surge.sh -> host for free static websites
+
+tar -zcvf /backup/project.tar.gz --exclude "node_modules" /srv/www/ >> archive folder without node_modules
+tar -xvzf backup.tar.gz >> unarchive
+
+rm -rfv
+
+ffsend -> send files
+  ffsend upload name_of_file.pdf
+  ffsend ls => list all uploaded files
+  ffsend rm uploadlink -> remove the uploaded file
+  
+wormhole send README.md
+wormhole receive
+
+croc send path/to/file_or_directory
+croc passphrase
+
+localsend
+
+wrk -> Test api performance
+   wrk -t12 -c500 -d30s http://localhost:3000/api/cities
+   
+k6 -> test api perfomance 
+   k6 run script.js
+
+lshw -short -> hardware data
+
+inxi -Fxmz -> hardware data	
+
+
+vim -> 
+
+  a \\ enter insert mode after the cursor
+  A \\ Go to the end of the line and start editing
+  I \\ Go to the begging of the line and start editing
+  O \\ Create a line above and enter insert mode
+  o \\ Create a line below and enter insert mode
+  0 \\ Go to the begging of the line
+  ~ \\ Switch capitalization
+  ^ \\ Go to first non blank character in the line
+  g_ \\ Go to last non blank character in the line
+  $ \\ Go to the end of the line
+  o \\ Create a new line down and start editing
+  * \\ Move to the next selected word down
+  # \\ Move to the NEXT selected word up
+  ; \\ go to the next instance of character
+  x \\ Delete a character
+  rx \\ Replace a character with letter x
+  s \\ Delete the character and enter in insert mode
+  ce \\ Replace a word 
+  cfz \\ Change through the next occurance of z
+  gg \\ Go to the beginig of the file
+  gi \\ Go to last insert mode
+  zz \\ center current line to the center or the screen
+  zt \\ put current line on top of the screen
+  zb \\ put current lone on the bottom of the screen
+  G \\ Go to the end of the file
+  H \\ Go to the High of the screen
+  M \\ Go to the Middle of the screen
+  L \\ Go to the Low of the screen
+  w \\ Move to next word (beging)
+  5w \\ Move to the next 5 words
+  5j \\ Move down 5 lines
+  5G \\ Move from the begging of file 5 lines down
+  e \\ Move to next word (end)
+  b \\ Move to previous word
+  . \\ repeat the previous command ex: dw delete a word
+  gi \\ jump to previous edit and insert mode
+  3b \\ Move back 3 words
+  fd \\ Find and move to symbol d
+  f5 \\ Find and move to symbol 5
+  ysw" \\ put the word in the " qotes
+  cs'" \\ change sorroundins ' to "
+  ds' \\ delte sorroundins '
+  diw \\ Delete inside word   
+  daw \\ Delete all word   
+  dg_ \\ delete everything from to the end of the line  
+  d$ \\ delete everything from to the end of the line  
+  d0 \\ delete everyhitng to the begging of the line
+  u \\ undo
+  0w \\ same as ^ go to the first word in line
+  /word \\ Find a string "word" and press n to find next
+  :tabe \\ Open a new blank file in a tab
+  :tabn \\ Open next tab
+  :split filename.txt \\ open horizonatl split
+  :vplit filename.txt \\ open vertical split
+  gt \\ Open next tab
+  gd \\ Go to definition 
+  ctrl+PgUp \\ Go to previous tab
+  ctrl+PgDown \\ Go to next tab
+  ctrl + o // Go back from where I've jumped  
+  ctrl + t // Go back to definition
+  ctrl + pgup \\ Open next tab
+  :tabnew /Documents/myfile.js \\ Open in a new tab a file 
+  :tabp \\ Open previous tab
+  ctrl + y \\ move up while keeping the cursor
+  ctrl + u \\ move up 
+  ctrl + d \\ move down
+  ctrl + f \\ move down a lot
+  ctrl + b \\ move up a lot
+  ctrl + a \\ Last inserted text
+  ctrl + r \\ Insert text from register or redo
+  ctrl + x ctrl + l \\ in Insert uX and ctrlL to bring similar line
+  ctrl + x ctrl + o \\ in insert mode bring up the omni suggestion 
+  "ay \\ add to register a yank
+  c6j \\ delete six lines down and enter edit mode
+  mx \\ Set a mark to the current position
+  'x \\ Go to the mark called x
+  dip \\ delete inside a paragraph
+  dw \\ Delete a word
+  daw \\ Delete all word
+  di{ \\ delete inside {}
+  cfk \\ change everything up until 'k'
+  ciw \\ chnage inside word
+  cit \\ change inside tags
+  ci{ \\ change inside {}
+  ci" \\ change inside "" 
+  ca" \\ change all including  "" 
+  cc \\ delete the whole line and enter in insert mode
+  { \\ go to the begging of paragraph
+  } \\ go to the end of paragrpah
+  {d} \\ delete the paragraph
+  {y} \\ copy the paragraph
+  shift+a \\ enter insert mode positioning cursor to the end of the line
+  shift+up \\ Move the screen up
+  shift+down \\ Move the screen down
+  fz \\ go to the character 'z'
+  tz \\ Jump to the next occurance of character 'z' just before it
+  u \\ Undo 
+  V \\ Select a whole line
+  y \\ Yank aka copy
+  y$ \\ copy all the contents till the ed of the line
+  yiw \\ copy a word
+  > \\ indent
+  < \\ indent backwards
+  = \\ autoindent
+  gg=G \\ autoindent / format the whole file
+  % \\ Go to matching parathesis
+  d \\ delete
+  D \\ delete after the cursor
+  C \\ delete after the cursor and enter insert mode
+  dd \\ delte a line
+  p \\ insert/paste to the right of the cursor
+  P \\ insert to the left of the cursor
+  ctrl + W + l \\ Move to the window from NERDTree
+  ctrl + W + h \\ Move to the NERDTree from window
+  s \\ Split a window from NERDTree 
+  t \\ Open in a tab the filew from NERDTree 
+  ddp \\ swaps current line with the next one
+  :!pwd \\ Execute command pwd
+  :qa \\ quit all
+  :bw \\ go back to the previous file
+  :b index \\ go to buffer with unique name index
+  ct) \\ delete everyhitng until ) and enter insert mode
+  dt/ \\ delete everything until /
+  dt] \\ delete everything until ]
+  ctrl+] \\ Go to definition
+  ctrl+t \\ Go to previous definition
+  ctrl+n \\ Next autocomplete
+  ctrl+p \\ Previous autocomplete 
+  :ls \\ list buffers
+  :find filename.txt \\ to find a file in subdirs
+  :find *.js \\ to find all js files in subdirs
+  :edit . \\ open built in file browser
+  :read somefile.txt \\ Put the content of somefile in current file
+  :help dd \\ dispplay help for dd command
+  :help c_w \\ dispplay help for w in command mode
+  :helpgrep copy \\ search thru help for word copy
+  :%y+ \\ capy all lines to clipboard
+  za \\ fold under cursor
+  shift+H \\ Show hide hidden files
+  
+  ZZ \\ Quits vim
+  gcc \\ to comment out
+  ggVG \\ select everything whole page
+  gcip \\ comments a paragraph
+  
+
+Convert all HEIC files in current folder to jpeg
+  
+for file in *.HEIC
+    heif-convert "$file" (basename "$file" .HEIC).jpeg
+end
+
+
+const test = ({ num }) => `This is a number ${num}`
+const test = ({ num }) => `This is a number ${num}`
+
+const test = ({ num }) => `This is a number ${num}`
+
+npm create capacitor-svelte-app@latest
+
+
+medium.com >> scribe.rip
+
+docker run -it --rm --cap-add=NET_ADMIN \
+-p 1194:1194/udp -p 80:8080/tcp \
+-e HOST_ADDR=$(curl -s https://api.ipify.org) \
+--name dockovpn alekslitvinenk/openvpn
+
+docker exec -it  <container-name> psql -U <dataBaseUserName> <dataBaseName>
+
+docker exec -i <CONTAINER> psql -U <USER> -d <DB-NAME> < <PATH-TO-DUMP>
+
+docker exec -i mypostgres psql -U postgres -d mydb < backup.sql
+
+
+/// Mongo
+createdAt: -1 reverse order by createdAt
+{email : {$regex: '/*@duck.com' }} find all that contains 
+
+
+
+const hasDuplicates = newData.some(currentObject => seen.size === seen.add(currentObject.deviceId).size);
+
+ npx create-directus-project directus-project
+ 
+ POST
+	https://igairport.turktelekomwifi.com/api/portal/generic/sms-to-resend-by-owner
+
+
+-----------
+OpenBSD
+
+shudown -ph now
+
+go run github.com/Jigsaw-Code/outline-sdk/x/examples/outline-cli@latest -transport "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpObjVGWHFWdFN1aU5PY0o2Uk4wZFow@headset-fasted-fanciers.freesocks.work:443/?outline=1&prefix=%16%03%01%00%C2%A8%01%01"
+
+ollama list | awk 'NR>1 {print $1}' | xargs -I {} sh -c 'echo "Updating model: {}"; ollama pull {}; echo "--"' && echo "All models updated."
+
+ollama list | tail -n +2 | awk '{print $1}' | xargs -I {} ollama pull {}
+
+==============
+LazyVim
+
+_e -> sidebar
+_ft -> terminal
+ctrl/ -> terminal
+_ff -> fuzzy file search
+_sg -> full text search all files
+_st -> search for todos
+_sk -> search keymaps (shortcuts)
+_cr -> rename
+_ca -> autoimport
+_uC -> change theme
+_gg -> lazyit -> _ _ to select files to stage -> c to commit
+in sidebar ? for helpers 
+in sidebar a to add file
+shift+l -> switch tabs
+_fb -> switch between files
+K -> documentation
+in insert mode to paste from clipboard -> Ctrl+R > Shift+= 
+sg[entr] -> search to first occurance of g and jump to it 
+// TODO: do some work -> for todos
+
+
+Caddy
+
+be.kiry.kz {
+   reverse_proxy 127.0.0.1:4321
+}
+
+app.kiry.kz {
+  root * /var/www/app
+  file_server {
+    index index.html
+  }
+}
+
+Update ollama models
+
+ollama list | awk 'NR>1 {print $1}' | xargs -I {} sh -c 'echo "Updating model: {}"; ollama pull {}; echo "--"' && echo "All models updated."
+
+
+----
+
+postgres://user:pass@localhost/dbname
+pg://user:pass@localhost/dbname?sslmode=disable
+mysql://user:pass@localhost/dbname
+mysql:/var/run/mysqld/mysqld.sock
+sqlserver://user:pass@remote-host.com/dbname
+mssql://user:pass@remote-host.com/instance/dbname
+ms://user:pass@remote-host.com:port/instance/dbname?keepAlive=10
+oracle://user:pass@somehost.com/sid
+sap://user:pass@localhost/dbname
+file:myfile.sqlite3?loc=auto
+/path/to/sqlite/file/test.db
+odbc+postgres://user:pass@localhost:port/dbname?option1=
+
+----
+mix archive.install hex igniter_new --force
+mix archive.install hex phx_new 1.8.1 --force  -> installs new global package
+mix archive -> npm list -g
+iex -S mix phx.server   -> npm run dev
+mix deps.clean --unlock --unused
+
+
+mix ash_postgres.generate_migrations --name create_cars
+mix ecto.migrate
+
+---
+
+gh repo create
+
+pnpm i @fontsource/jetbrains-mono @fontsource/manrope
+
+add fonts tailwind css
+
+@import '@fontsource/manrope';
+@import '@fontsource/jetbrains-mono';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--r-main-font: 'Manrope';
+	--r-heading-font: 'Manrope';
+	--r-code-font: 'JetBrains Mono';
+	--r-link-color: aqua;
+	--r-link-color-hover: aqua;
+}
