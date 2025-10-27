@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <openbox_menu
-    xmlns="http://openbox.org/"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://openbox.org/
-                file:///usr/share/openbox/menu.xsd"
+	xmlns="http://openbox.org/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://openbox.org/ file:///usr/share/openbox/menu.xsd"
 >
 	<menu id="root-menu" label="Openbox 3">
-  <separator label="Framework 13" />
-    <separator />
+		<separator label="Framework 13" />
+		<separator />
 		<item label="Run Program">
 			<action name="Execute">
 				<command>
-				rofi -show drun -dpi 192
+					rofi -show drun -dpi 192
 				</command>
 			</action>
 		</item>
@@ -26,7 +25,7 @@
 		<item label="Firefox">
 			<action name="Execute">
 				<command>
-    				firefox
+					firefox
 				</command>
 			</action>
 		</item>
@@ -40,15 +39,14 @@
 		<item label="Text Editor">
 			<action name="Execute">
 				<command>
-				gnome-text-editor
+					gnome-text-editor
 				</command>
 			</action>
 		</item>
 		<item label="Cursor">
 			<action name="Execute">
-			<!-- TODO: Needs fixing -->
 				<command>
-    				cursor
+					cursor
 				</command>
 			</action>
 		</item>
@@ -61,19 +59,19 @@
 		</item>
 		<separator />
 		<menu
-            id="accessories"
-            label="Accessories"
-            icon="/home/gevera/Pictures/icons/dashboard-icons-main/png/tux.png"
-        >
-		<showIcons>yes</showIcons>
-		    <item label="Catfish File Search">
+			id="accessories"
+			label="Accessories"
+			icon="/home/gevera/Pictures/icons/dashboard-icons-main/png/tux.png"
+		>
+			<showIcons>yes</showIcons>
+			<item label="Catfish File Search">
 				<action name="Execute">
 					<command>
 						catfish
 					</command>
 				</action>
 			</item>
-		    <item label="Archive Manager">
+			<item label="Archive Manager">
 				<action name="Execute">
 					<command>
 						file-roller
@@ -83,7 +81,7 @@
 			<item label="Text Editor">
 				<action name="Execute">
 					<command>
-    					gnome-text-editor
+						gnome-text-editor
 					</command>
 				</action>
 			</item>
@@ -102,14 +100,14 @@
 			<item label="Thunar File Manager">
 				<action name="Execute">
 					<command>
-    					thunar
+						thunar
 					</command>
 				</action>
 			</item>
 			<item label="Thunar File Manager (root)">
 				<action name="Execute">
 					<command>
-    					 terminator --command="pkexec thunar"
+						terminator --command="pkexec thunar"
 					</command>
 				</action>
 			</item>
@@ -129,18 +127,18 @@
 					</command>
 				</action>
 			</item>
-		    <item label="Viewnior Image Viewer">
+			<item label="Viewnior Image Viewer">
 				<action name="Execute">
 					<command>
 						viewnior
 					</command>
 				</action>
 			</item>
-		    <menu id="graphicsScreenshots" label="Take Screenshot">
+			<menu id="graphicsScreenshots" label="Take Screenshot">
 				<item label="Flameshot">
 					<action name="Execute">
 						<command>
-						   flameshot gui
+							flameshot gui
 						</command>
 					</action>
 				</item>
@@ -148,28 +146,32 @@
 				<item label="Now">
 					<action name="Execute">
 						<command>
-							scrot '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'
+							scrot '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior
+							~/images/$f'
 						</command>
 					</action>
 				</item>
 				<item label="In 5 Seconds...">
 					<action name="Execute">
 						<command>
-							scrot -d 5 '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'
+							scrot -d 5 '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp;
+							viewnior ~/images/$f'
 						</command>
 					</action>
 				</item>
 				<item label="In 10 Seconds...">
 					<action name="Execute">
 						<command>
-							scrot -d 10 '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'
+							scrot -d 10 '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp;
+							viewnior ~/images/$f'
 						</command>
 					</action>
 				</item>
 				<item label="Selected Area... (click &amp; drag mouse)">
 					<action name="Execute">
 						<command>
-							scrot -s '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'
+							scrot -s '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp;
+							viewnior ~/images/$f'
 						</command>
 					</action>
 				</item>
@@ -183,14 +185,14 @@
 					</command>
 				</action>
 			</item>
-		    <item label="VLC Media Player">
+			<item label="VLC Media Player">
 				<action name="Execute">
 					<command>
 						vlc
 					</command>
 				</action>
 			</item>
-		    <item label="Audacious Music Player">
+			<item label="Audacious Music Player">
 				<action name="Execute">
 					<command>
 						flatpak run org.atheme.audacious
@@ -206,42 +208,42 @@
 			</item>
 		</menu>
 		<menu id="ai" label="AI">
-		<item label="Preplexity">
-			<action name="Execute">
-				<command>
-					flatpak run br.com.wiselabs.simplexity
-				</command>
-			</action>
-		</item>
+			<item label="Preplexity">
+				<action name="Execute">
+					<command>
+						flatpak run br.com.wiselabs.simplexity
+					</command>
+				</action>
+			</item>
 		</menu>
 		<menu id="network" label="Network">
-		    <!-- <menu
+			<!-- <menu
                 execute="cb-x-www-browser-pipemenu"
                 id="wwwbrowsers"
                 label="WWW Browsers"
             /> -->
-            <item label="Firefox">
+			<item label="Firefox">
 				<action name="Execute">
 					<command>
 						firefox
 					</command>
 				</action>
 			</item>
-            <item label="Chrome">
+			<item label="Chrome">
 				<action name="Execute">
 					<command>
 						goole-chrome
 					</command>
 				</action>
 			</item>
-            <item label="Brave">
+			<item label="Brave">
 				<action name="Execute">
 					<command>
 						flatpak run com.brave.Browser
 					</command>
 				</action>
 			</item>
-            <item label="Opera">
+			<item label="Opera">
 				<action name="Execute">
 					<command>
 						flatpak run com.opera.Opera
@@ -251,21 +253,21 @@
 			<item label="Transmission BitTorrent">
 				<action name="Execute">
 					<command>
-    					flatpak run com.transmissionbt.Transmission
+						flatpak run com.transmissionbt.Transmission
 					</command>
 				</action>
 			</item>
 			<item label="Telegram">
 				<action name="Execute">
 					<command>
-    					flatpak run org.telegram.desktop
+						flatpak run org.telegram.desktop
 					</command>
 				</action>
 			</item>
 			<item label="Discord">
 				<action name="Execute">
 					<command>
-    					flatpak run com.discordapp.Discord
+						flatpak run com.discordapp.Discord
 					</command>
 				</action>
 			</item>
@@ -284,32 +286,32 @@
 				</action>
 			</item>
 			<menu
-                execute="cb-remote-desktop-pipemenu"
-                id="remotedesktop"
-                label="Remote Desktop"
-            />
+				execute="cb-remote-desktop-pipemenu"
+				id="remotedesktop"
+				label="Remote Desktop"
+			/>
 			<menu execute="cb-sshconfig-pipemenu" id="sshconfig" label="SSH" />
 			<separator label="Services" />
 			<menu execute="cb-dropbox-pipemenu" id="dropbox" label="Dropbox" />
 		</menu>
 		<menu id="office" label="Office">
-		    <menu id="libreoffice" label="LibreOffice">
-            <item label="Writer">
-                <action name="Execute">
-                    <command>
-                        libreoffice --writer
-                    </command>
-                </action>
-            </item>
-            <item label="Calc">
-                <action name="Execute">
-                    <command>
-                        libreoffice --calc
-                    </command>
-                </action>
-            </item>
-            </menu>
-		    <item label="Google Docs">
+			<menu id="libreoffice" label="LibreOffice">
+				<item label="Writer">
+					<action name="Execute">
+						<command>
+							libreoffice --writer
+						</command>
+					</action>
+				</item>
+				<item label="Calc">
+					<action name="Execute">
+						<command>
+							libreoffice --calc
+						</command>
+					</action>
+				</item>
+			</menu>
+			<item label="Google Docs">
 				<action name="Execute">
 					<command>
 						chrome https://drive.google.com/
@@ -319,7 +321,7 @@
 			<item label="Focus Writer">
 				<action name="Execute">
 					<command>
-					focuswriter
+						focuswriter
 					</command>
 				</action>
 			</item>
@@ -347,6 +349,58 @@
         />
 		<separator /> -->
 		<menu id="settings" label="Settings">
+			<menu id="obConfig" label="Openbox">
+				<item label="Edit menu.xml">
+					<action name="Execute">
+						<command>
+							gnome-text-editor ~/.config/openbox/menu.xml
+						</command>
+					</action>
+				</item>
+				<item label="Edit rc.xml">
+					<action name="Execute">
+						<command>
+							gnome-text-editor ~/.config/openbox/rc.xml
+						</command>
+					</action>
+				</item>
+				<item label="Edit autostart">
+					<action name="Execute">
+						<command>
+							gnome-text-editor ~/.config/openbox/autostart
+						</command>
+					</action>
+				</item>
+				<separator />
+				<item label="GUI Menu Editor">
+					<action name="Execute">
+						<command>
+							obmenu
+						</command>
+					</action>
+				</item>
+				<item label="GUI Applications Settings Editor">
+					<action name="Execute">
+						<command>
+							obapps
+						</command>
+					</action>
+				</item>
+				<item label="GUI Config Tool">
+					<action name="Execute">
+						<command>
+							obconf
+						</command>
+					</action>
+				</item>
+				<separator />
+				<item label="Reconfigure">
+					<action name="Reconfigure" />
+				</item>
+				<item label="Restart">
+					<action name="Restart" />
+				</item>
+			</menu>
 			<menu execute="cb-compositor" id="CompositingPipeMenu" label="Compositor" />
 			<menu id="conkyconfig" label="Conky">
 				<item label="Edit .conkyrc">
@@ -413,58 +467,6 @@
 					</action>
 				</item>
 			</menu>
-			<menu id="obConfig" label="Openbox">
-				<item label="Edit menu.xml">
-					<action name="Execute">
-						<command>
-							gnome-text-editor ~/.config/openbox/menu.xml
-						</command>
-					</action>
-				</item>
-				<item label="Edit rc.xml">
-					<action name="Execute">
-						<command>
-							gnome-text-editor ~/.config/openbox/rc.xml
-						</command>
-					</action>
-				</item>
-				<item label="Edit autostart">
-					<action name="Execute">
-						<command>
-							gnome-text-editor ~/.config/openbox/autostart
-						</command>
-					</action>
-				</item>
-				<separator />
-				<item label="GUI Menu Editor">
-					<action name="Execute">
-						<command>
-							obmenu
-						</command>
-					</action>
-				</item>
-				<item label="GUI Applications Settings Editor">
-					<action name="Execute">
-						<command>
-							obapps
-						</command>
-					</action>
-				</item>
-				<item label="GUI Config Tool">
-					<action name="Execute">
-						<command>
-							obconf
-						</command>
-					</action>
-				</item>
-				<separator />
-				<item label="Reconfigure">
-					<action name="Reconfigure" />
-				</item>
-				<item label="Restart">
-					<action name="Restart" />
-				</item>
-			</menu>
 			<menu id="terminatorconfig" label="Terminator">
 				<item label="Edit config file">
 					<action name="Execute">
@@ -490,7 +492,7 @@
 						</command>
 					</action>
 				</item>
-                <item label="Restart tint2">
+				<item label="Restart tint2">
 					<action name="Execute">
 						<command>
 							tint2restart
@@ -514,43 +516,43 @@
 				</item>
 			</menu>
 			<menu id="DisplaySettings" label="Display Settings">
-			    <item label="ARandR Screen Layout Editor">
-				    <action name="Execute">
-					    <command>
-						    arandr
-					    </command>
-				    </action>
-			    </item>
+				<item label="ARandR Screen Layout Editor">
+					<action name="Execute">
+						<command>
+							arandr
+						</command>
+					</action>
+				</item>
 				<separator label="Resolution" />
-                <item label="2880x1920">
-                    <action name="Execute">
-                        <execute>
-                            xrandr -s 2880x1920
-                        </execute>
-                    </action>
-                </item>
-                <item label="1024x768">
-                    <action name="Execute">
-                        <execute>
-                            xrandr -s 1024x768
-                        </execute>
-                    </action>
-                </item>
-                <item label="800x600">
-                    <action name="Execute">
-                        <execute>
-                            xrandr -s 800x600
-                        </execute>
-                    </action>
-                </item>
-			    <separator label="Help?" />
-			    <item label="man xrandr">
-				    <action name="Execute">
-					    <command>
-						    terminator --command="man xrandr"
-					    </command>
-				    </action>
-			    </item>
+				<item label="2880x1920">
+					<action name="Execute">
+						<execute>
+							xrandr -s 2880x1920
+						</execute>
+					</action>
+				</item>
+				<item label="1024x768">
+					<action name="Execute">
+						<execute>
+							xrandr -s 1024x768
+						</execute>
+					</action>
+				</item>
+				<item label="800x600">
+					<action name="Execute">
+						<execute>
+							xrandr -s 800x600
+						</execute>
+					</action>
+				</item>
+				<separator label="Help?" />
+				<item label="man xrandr">
+					<action name="Execute">
+						<command>
+							terminator --command="man xrandr"
+						</command>
+					</action>
+				</item>
 			</menu>
 			<menu id="Notifications" label="Notifications">
 				<item label="settings">
@@ -596,12 +598,12 @@
 			</item>
 		</menu>
 		<menu id="system" label="System">
-		    <menu
-                execute="cb-printing-pipemenu"
-                id="PrintingPipeMenu"
-                label="Printers"
-            />
-		    <item label="GParted">
+			<menu
+				execute="cb-printing-pipemenu"
+				id="PrintingPipeMenu"
+				label="Printers"
+			/>
+			<item label="GParted">
 				<action name="Execute">
 					<command>
 						terminator --command="pkexec gparted"
@@ -611,7 +613,7 @@
 			<item label="Software Manager">
 				<action name="Execute">
 					<command>
-    				gnome-software
+						gnome-software
 					</command>
 				</action>
 			</item>
@@ -623,24 +625,32 @@
 			<!-- 	</action> -->
 			<!-- </item> -->
 		</menu>
-		<!--<menu id="help" label="Help" execute="cb-help-pipemenu" />-->
+		<!--<menu
+		id="help" label="Help" execute="cb-help-pipemenu" />-->
 		<separator />
-  <item label="Log Out">
-    <action name="SessionLogout">
-      <prompt>yes</prompt>
-    </action>
-  </item>
+		<item label="Log Out">
+			<action name="SessionLogout">
+				<prompt>yes</prompt>
+			</action>
+		</item>
+		<item label="Suspend">
+			<action name="Execute">
+				<command>
+					systemctl suspend
+				</command>
+			</action>
+		</item>
 		<item label="Lock Screen">
 			<action name="Execute">
 				<command>
-				i3lock
+					i3lock
 				</command>
 			</action>
-    </item>
-    <item label="Exit">
-    <action name="Exit">
-      <prompt>yes</prompt>
-    </action>
-  </item>
+		</item>
+		<item label="Exit">
+			<action name="Exit">
+				<prompt>yes</prompt>
+			</action>
+		</item>
 	</menu>
 </openbox_menu>
